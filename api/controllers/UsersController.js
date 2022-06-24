@@ -44,21 +44,6 @@ export const updateUsers = async (req, res) => {
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
-    // const { name, username, password } = req.body;
-    // if (password) {
-    //     const hashedPassword = await hash(password);
-    //     try {
-    //         const updatedUsers = await UsersModel.updateOne(
-    //             { _id: req.params.id },
-    //             { $set: { name, username, password: hashedPassword } }
-    //         );
-    //         res.status(201).json(updatedUsers);
-    //     } catch (err) {
-    //         res.status(400).json({ message: err.message });
-    //     }
-    // } else {
-
-    // }
 };
 
 // DELETE

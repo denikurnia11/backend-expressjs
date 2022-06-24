@@ -6,6 +6,7 @@ import userRouter from "./routes/UsersRoute.js";
 import moviesRouter from "./routes/MoviesRoute.js";
 import authRouter from "./routes/AuthRoute.js";
 import cookieParser from "cookie-parser";
+import fileUpload from "express-fileupload";
 
 const app = express();
 dotenv.config();
@@ -24,9 +25,11 @@ mongoose.connection.once("open", () => {
 
 // Middlewares
 app.use(express.json());
+app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use(cookieParser());
+app.use(fileUpload());
 
 // Routes
 app.use("/api/auth", authRouter);
